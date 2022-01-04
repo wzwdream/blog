@@ -19,6 +19,11 @@ module.exports = {
       }
     ]
   ],
+  "plugins": [
+    [
+      '@vuepress/register-components',
+    ]
+  ],
   "theme": "reco",
   "themeConfig": {
     "nav": [
@@ -43,9 +48,18 @@ module.exports = {
         // ]
       },
       {
+        "text": "留言板",
+        "icon": "reco-suggestion",
+        "link": "/theme-reco/message-board.md"
+      },
+      {
         "text": "关于我",
         "icon": "reco-account",
         "items": [
+          {
+            "text": "个人信息",
+            "link": "/theme-reco/about.md",
+          },
           {
             "text": "掘金",
             "link": "https://juejin.cn/user/3281394147006381",
@@ -86,6 +100,10 @@ module.exports = {
         "link": "https://vuepress-theme-reco.recoluan.com"
       }
     ],
+    "valineConfig": {
+      "appId": 'Lt08OCjedmFHtvj8mRjiQYxW-gzGzoHsz',// your appId
+      "appKey": 'Q1oaJOIF7mhhhDjc3PbxaQUR', // your appKey
+    },
     "logo": "/avatar.png",
     "search": true,
     "searchMaxSuggestions": 10,

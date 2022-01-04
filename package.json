@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "author": "reco_luan",
   "scripts": {
-    "dev": "vuepress dev . --open --host \"localhost\"",
+    "dev": "vuepress dev . --open --host \"localhost\" --temp .temp",
     "build": "vuepress build ."
   },
   "devDependencies": {
     "vuepress": "1.8.2",
     "vuepress-theme-reco": "1.6.10"
   },
-  "description": "This is my blog"
+  "description": "This is my blog",
+  "dependencies": {
+    "leancloud-storage": "^4.12.0",
+    "valine": "^1.4.16"
+  }
 }
