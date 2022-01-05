@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{569:function(t,e,n){"use strict";n.r(e);var s=n(6),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("主要记录一些偶然间想记录的事件，生活、知识...")])])}),[],!1,null,null,null);e.default=l.exports}}]);

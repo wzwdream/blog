@@ -3,6 +3,11 @@ module.exports = {
   "description": "生活不可能像你想象的那么好，但也不会像你想象的那么糟。",
   "dest": "docs",
   "base": "/blog/",
+  "locales": {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   "head": [
     [
       "link",
