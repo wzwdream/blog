@@ -12,7 +12,11 @@
   },
   "description": "This is my blog",
   "dependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "leancloud-storage": "^4.12.0",
-    "valine": "^1.4.16"
+    "valine": "^1.4.16",
+    "vuepress-plugin-cursor-effects": "^1.0.2",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3"
   }
 }

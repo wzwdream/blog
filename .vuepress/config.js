@@ -22,7 +22,57 @@ module.exports = {
   "plugins": [
     [
       '@vuepress/register-components',
-    ]
+    ],
+    [
+      //先安装在配置， npm install @vuepress-reco/vuepress-plugin-kan-ban-niang --save
+      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
+      {
+        theme: ['haru1', 'blackCat', 'whiteCat', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
+        clean: true, // 是否显示操作按钮
+        messages: {
+          welcome: '我是树深遇鹿，欢迎你的关注 ',
+          home: '心里的话，我想要带你回家。',
+          theme: '好吧，希望你能喜欢我的其他小伙伴。',
+          close: '再见哦'
+        },
+        width: 240,
+        height: 352,
+        modelStyle: {
+          left: '30px',
+          bottom: '-20px',
+          opacity: '0.8'
+        }
+      }
+    ],
+    [
+      //鼠标点击特效 先安装在配置， npm install vuepress-plugin-cursor-effects --save
+      "cursor-effects",
+      {
+        size: 3,                    // size of the particle, default: 2
+        // shape: ['start'],  // shape of the particle, default: 'star'
+        zIndex: 999999999           // z-index property of the canvas, default: 999999999
+      }
+    ],
+    [
+      //动态标题 先安装在配置， npm install vuepress-plugin-dynamic-title --save
+      "dynamic-title",
+      {
+        showIcon: "/favicon.ico",
+        showText: "(/≧▽≦/)咦！又好了！",
+        hideIcon: "/failure.ico",
+        hideText: "(●—●)喔哟，崩溃啦！",
+        recoverTime: 2000
+      }
+    ],
+    [
+      //vuepress复制粘贴提示插件P 先安装在配置 npm install vuepress-plugin-nuggets-style-copy --save
+      "vuepress-plugin-nuggets-style-copy", {
+        copyText: "复制代码",
+        tip: {
+          content: "复制成功!"
+        }
+      }
+    ],
   ],
   "theme": "reco",
   "themeConfig": {
@@ -40,7 +90,7 @@ module.exports = {
       {
         "text": "随笔",
         "icon": "reco-document",
-        "link": "/theme-reco/theme-reco/"
+        "link": "/article/informal-essay/"
         // "items": [
         //   {
         //     "text": "随笔",
@@ -50,7 +100,7 @@ module.exports = {
       {
         "text": "留言板",
         "icon": "reco-suggestion",
-        "link": "/theme-reco/message-board.md"
+        "link": "/article/message-board.md"
       },
       {
         "text": "关于我",
@@ -58,7 +108,7 @@ module.exports = {
         "items": [
           {
             "text": "个人信息",
-            "link": "/theme-reco/about.md",
+            "link": "/article/about.md",
           },
           {
             "text": "掘金",
@@ -70,7 +120,7 @@ module.exports = {
     ],
     "subSidebar": "auto",
     "sidebar": {
-      "/theme-reco/theme-reco/": [
+      "/article/informal-essay/": [
         "",
         "timer"
       ]
