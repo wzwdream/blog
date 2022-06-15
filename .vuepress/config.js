@@ -155,9 +155,12 @@ module.exports = {
         "link": "https://vuepress-theme-reco.recoluan.com"
       }
     ],
-    "valineConfig": {
-      "appId": 'Lt08OCjedmFHtvj8mRjiQYxW-gzGzoHsz',// your appId
-      "appKey": 'Q1oaJOIF7mhhhDjc3PbxaQUR', // your appKey
+    vssueConfig: {
+      platform: 'github',
+      owner: 'wzwdream',
+      repo: 'blog',
+      clientId: '0838dfbdb36f88359fb4',
+      clientSecret: '094d643f5595ff8e8c790ea6ff8cce0201891d03',
     },
     "logo": "/avatar.png",
     "search": true,
