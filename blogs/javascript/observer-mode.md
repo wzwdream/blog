@@ -3,6 +3,7 @@ title: js的设计模式（一）-观察者模式跟发布订阅者模式
 date: 2022-05-30
 tags:
  - javascript
+ - 设计模式
 categories: 
  - javascript
 ---

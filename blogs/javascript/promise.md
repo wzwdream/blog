@@ -3,6 +3,7 @@ title: promise原理学习
 date: 2022-6-2
 tags:
  - javascript
+ - 源码
 categories: 
  - javascript
 ---
