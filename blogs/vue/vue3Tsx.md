@@ -2,10 +2,10 @@
 title: vue3（tsx）-从搭建到实践
 date: 2022-08-01
 tags:
- - javascript
- - webpack5
+ - TypeScript
+ - vue3
 categories: 
- - javascript
+ - TypeScript
  - vue3
  - tsx/jsx
 ---
