@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>上传文件base64流转formData | 树深遇鹿</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/avatar.png">
+    <meta name="description" content="生活不可能像你想象的那么好，但也不会像你想象的那么糟。">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.6628c80e.css" as="style"><link rel="preload" href="/blog/assets/js/app.a509c42a.js" as="script"><link rel="preload" href="/blog/assets/js/3.2033ca4e.js" as="script"><link rel="preload" href="/blog/assets/js/1.bac9d6e9.js" as="script"><link rel="preload" href="/blog/assets/js/13.eb6b3748.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.5126abd5.js"><link rel="prefetch" href="/blog/assets/js/11.b06c9a0a.js"><link rel="prefetch" href="/blog/assets/js/12.53006ae4.js"><link rel="prefetch" href="/blog/assets/js/14.09e21da9.js"><link rel="prefetch" href="/blog/assets/js/15.11ee36bc.js"><link rel="prefetch" href="/blog/assets/js/16.7806af62.js"><link rel="prefetch" href="/blog/assets/js/17.9f533cd6.js"><link rel="prefetch" href="/blog/assets/js/18.123eda58.js"><link rel="prefetch" href="/blog/assets/js/19.acde7d5d.js"><link rel="prefetch" href="/blog/assets/js/20.ebde49f8.js"><link rel="prefetch" href="/blog/assets/js/21.71967a3d.js"><link rel="prefetch" href="/blog/assets/js/22.90dde8b9.js"><link rel="prefetch" href="/blog/assets/js/23.9c2f90a7.js"><link rel="prefetch" href="/blog/assets/js/24.ab1525e9.js"><link rel="prefetch" href="/blog/assets/js/25.67c112b6.js"><link rel="prefetch" href="/blog/assets/js/26.8227270f.js"><link rel="prefetch" href="/blog/assets/js/27.cc78e800.js"><link rel="prefetch" href="/blog/assets/js/28.e5752d73.js"><link rel="prefetch" href="/blog/assets/js/29.da58829a.js"><link rel="prefetch" href="/blog/assets/js/30.ff1f3ce8.js"><link rel="prefetch" href="/blog/assets/js/31.f0fea46e.js"><link rel="prefetch" href="/blog/assets/js/32.e1d38585.js"><link rel="prefetch" href="/blog/assets/js/4.8cfcacf4.js"><link rel="prefetch" href="/blog/assets/js/5.ea2bca8a.js"><link rel="prefetch" href="/blog/assets/js/6.299f53ad.js"><link rel="prefetch" href="/blog/assets/js/7.1c424aca.js"><link rel="prefetch" href="/blog/assets/js/8.9dddd698.js"><link rel="prefetch" href="/blog/assets/js/9.90c64e91.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.6628c80e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>树深遇鹿</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>生活不可能像你想象的那么好，但也不会像你想象的那么糟。</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>wangzw</span>
+            
+          <span data-v-25ba6db2>2021 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/avatar.png" alt="树深遇鹿" class="logo"> <span class="site-name">树深遇鹿</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/每日一道算法题/" class="nav-link"><i class="undefined"></i>
+  每日一道算法题
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/TypeScript/" class="nav-link"><i class="undefined"></i>
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/tsx/jsx/" class="nav-link"><i class="undefined"></i>
+  tsx/jsx
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/webpack5/" class="nav-link"><i class="undefined"></i>
+  webpack5
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/blog/article/informal-essay/" class="nav-link router-link-active"><i class="iconfont reco-document"></i>
+  随笔
+</a></div><div class="nav-item"><a href="/blog/article/message-board.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-account"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/article/about.html" class="nav-link"><i class="undefined"></i>
+  个人信息
+</a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3281394147006381" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/blog/logo.jpeg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    wangzw
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>19</h3> <h6 data-v-39576ba9>文章</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>9</h3> <h6 data-v-39576ba9>标签</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/每日一道算法题/" class="nav-link"><i class="undefined"></i>
+  每日一道算法题
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/TypeScript/" class="nav-link"><i class="undefined"></i>
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/tsx/jsx/" class="nav-link"><i class="undefined"></i>
+  tsx/jsx
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/webpack5/" class="nav-link"><i class="undefined"></i>
+  webpack5
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/blog/article/informal-essay/" class="nav-link router-link-active"><i class="iconfont reco-document"></i>
+  随笔
+</a></div><div class="nav-item"><a href="/blog/article/message-board.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-account"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/article/about.html" class="nav-link"><i class="undefined"></i>
+  个人信息
+</a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3281394147006381" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><a href="/blog/article/informal-essay/" aria-current="page" class="sidebar-link">随笔</a></li><li><a href="/blog/article/informal-essay/timer.html" class="sidebar-link">关于定时器的一些知识</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>上传文件base64流转formData</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>wangzw</span>
+            
+          <span data-v-25ba6db2>2021 - </span>
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page"><section><div class="page-title"><h1 class="title">上传文件base64流转formData</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>wangzw</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>2022/8/15</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>javascript</span><span class="tag-item" data-v-f875f3fc>随笔</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>前几天在项目中遇到一个以前都没有接触过的问题，觉得很有意思记录一下</p> <p>场景是这样的</p> <p>我们项目中有一个语音上传（用的elment的upload组件），这个语音上传有两种方式：</p> <div class="language- extra-class"><pre><code>- 1、直接选择文件上传；
+
+- 2、输入文字，利用TTS能力转为语音，然后在上传。
+</code></pre></div><p>是不是看起来都挺正常的🥲，但是问题就出在，TTS能力不是自己公司的，它返回的是一个<code>base64</code>流，这样就导致先前的上传接口不支持（因为它是直接接收<code>FormData</code>的，不支持<code>base64</code>的），经过一段时间的（<s>百度</s>）思考，得出下列的思路：</p> <p>1.将base64格式的图片处理为Blob对象。
+2.将Blob对象添加到formData对象中。
+3.http请求头设置为context-type: multipart/form-data上送到文件服务器。</p> <h3 id="实现"><a href="#实现" class="header-anchor">#</a> 实现</h3> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>
+<span class="token comment">/*base64文件流*/</span>
+<span class="token keyword">const</span> base64String
+
+<span class="token comment">// 处理base64文件流</span>
+<span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base64String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//这里对base64串进行操作，去掉url头，并转换为byte</span>
+    <span class="token keyword">const</span> bstr <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">atob</span><span class="token punctuation">(</span>base64String<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 使用atob() 将base64 转为文本文件</span>
+    <span class="token keyword">let</span> n <span class="token operator">=</span> bstr<span class="token punctuation">.</span>length
+    <span class="token keyword">const</span> u8arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token comment">// 创建一个二进制数据缓冲区，可以理解为一个数组</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        u8arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> bstr<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token comment">// 将文本文件转为UTF-16的ASCII, 放到类型化数组对象中</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//Blob对象</span>
+    <span class="token keyword">const</span> blob <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>u8arr<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'audio/wav'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// FormData对象</span>
+    <span class="token keyword">const</span> fd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// 把文件追加到FormData对象中</span>
+    fd<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'autoCall_file'</span><span class="token punctuation">,</span> blob<span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.wav'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> fd
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// 上传到服务器</span>
+<span class="token keyword">function</span> <span class="token function">httpRequest</span><span class="token punctuation">(</span><span class="token parameter">formData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+        url<span class="token operator">:</span> <span class="token string">'xxxxx'</span><span class="token punctuation">,</span> <span class="token comment">// 你的文件服务器地址</span>
+        data<span class="token operator">:</span> formData<span class="token punctuation">,</span>
+        timeout<span class="token operator">:</span> formData<span class="token punctuation">,</span>
+        headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'multipart/form-data'</span><span class="token punctuation">,</span> <span class="token comment">// 请求头要设置为 form-data</span>
+            <span class="token string">'Cache-Control'</span><span class="token operator">:</span> <span class="token string">'no-cache'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>不得不说，活到老学到老，每次接触新知识都是满满的动力</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/8/17 08:40:29</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/blog/article/informal-essay/base64ToFormData.html#前言" class="sidebar-link reco-side-前言" data-v-cb1513f6>前言</a></li><li class="level-3" data-v-cb1513f6><a href="/blog/article/informal-essay/base64ToFormData.html#实现" class="sidebar-link reco-side-实现" data-v-cb1513f6>实现</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是树深遇鹿，欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="240" height="352" class="live2d" style="left:30px;bottom:-20px;opacity:0.8;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas><div></div></div></div>
+    <script src="/blog/assets/js/app.a509c42a.js" defer></script><script src="/blog/assets/js/3.2033ca4e.js" defer></script><script src="/blog/assets/js/1.bac9d6e9.js" defer></script><script src="/blog/assets/js/13.eb6b3748.js" defer></script>
+  </body>
+</html>
