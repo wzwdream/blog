@@ -127,7 +127,10 @@ module.exports = {
     "sidebar": {
       "/article/informal-essay/": [
         "",
-        "timer"
+        "timer",
+        "regularExpression",
+        "base64ToFormData",
+        
       ]
     },
     "type": "blog",
