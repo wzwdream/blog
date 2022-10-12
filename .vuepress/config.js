@@ -130,7 +130,8 @@ module.exports = {
         "timer",
         "regularExpression",
         "base64ToFormData",
-        "luckyDraw9"
+        "luckyDraw9",
+        "if-else"
       ]
     },
     "type": "blog",
