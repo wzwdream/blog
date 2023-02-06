@@ -131,7 +131,8 @@ module.exports = {
         "regularExpression",
         "base64ToFormData",
         "luckyDraw9",
-        "if-else"
+        "if-else",
+        "download"
       ]
     },
     "type": "blog",
