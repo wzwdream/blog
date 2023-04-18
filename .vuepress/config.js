@@ -96,6 +96,11 @@ module.exports = {
         "text": "随笔",
         "icon": "reco-document",
         "link": "/article/informal-essay/"
+        // "items": [
+        //   {
+        //     "text": "随笔",
+        //   }
+        // ]
       },
       {
         "text": "留言板",
@@ -126,9 +131,7 @@ module.exports = {
         "regularExpression",
         "base64ToFormData",
         "luckyDraw9",
-        "if-else",
-        "download",
-        "iframe"
+        "if-else"
       ]
     },
     "type": "blog",
