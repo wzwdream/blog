@@ -2,6 +2,7 @@
   "name": "laity",
   "homepage": "https://wzwdream.github.io/blog",
   "version": "1.0.0",
+  "license": "MIT",
   "author": "reco_luan",
   "scripts": {
     "dev": "vuepress dev . --open --host \"localhost\" --temp .temp",

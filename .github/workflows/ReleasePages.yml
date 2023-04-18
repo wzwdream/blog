@@ -6,20 +6,27 @@ on:
       - master
 jobs:
   build-and-deploy:
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️ # 将代码拉取到虚拟机
         uses: actions/checkout@v3
 
+      - name: Set up Node.js ${{ matrix.node-version }} 🚀 # 指定Node.js版本
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Install and Build 🔧 # 安装依赖、打包，如果提前已打包好无需这一步
         run: |
-          npm install
-          npm run build
+          yarn install
+          yarn run build
 
       - name: Deploy 🚀 # 部署
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages # 部署后提交到那个分支
           folder: docs # 这里填打包好的目录名称
-
