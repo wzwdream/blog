@@ -9,14 +9,24 @@
     "build": "vuepress build ."
   },
   "devDependencies": {
+    "@docsearch/js": "^3.3.3",
+    "chalk": "^5.2.0",
+    "chokidar": "^3.5.3",
+    "commander": "^10.0.1",
+    "esm": "^3.2.25",
+    "vue-class-component": "^7.2.6",
     "vuepress": "1.8.2",
     "vuepress-theme-reco": "1.6.10"
   },
   "description": "This is my blog",
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "formidable": "^2.1.1",
     "leancloud-storage": "^4.12.0",
+    "superagent": "^8.0.9",
+    "uuid": "7",
     "valine": "^1.4.16",
+    "vue": ">=2.5 <3",
     "vuepress-plugin-cursor-effects": "^1.0.2",
     "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-plugin-nuggets-style-copy": "^1.0.3"
