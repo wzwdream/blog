@@ -71,12 +71,12 @@ module.exports = {
     ],
     [
       //vuepress复制粘贴提示插件P 先安装在配置 npm install vuepress-plugin-nuggets-style-copy --save
-      "vuepress-plugin-nuggets-style-copy", {
-        copyText: "复制代码",
-        tip: {
-          content: "复制成功!"
-        }
-      }
+      // "vuepress-plugin-nuggets-style-copy", {
+      //   copyText: "复制代码",
+      //   tip: {
+      //     content: "复制成功!"
+      //   }
+      // }
     ],
   ],
   "theme": "reco",
